@@ -1,0 +1,40 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+/* LOGIN */
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-login form {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 8px;
+  width: 320px;
+}
+
+.admin-login h4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* DASHBOARD */
+.admin-container {
+  background: #f4f4f4;
+  min-height: 100vh;
+  color: #111;
+}
+
+.admin-container h1 {
+  margin-bottom: 30px;
+}
+
+.table {
+  background: #fff;
+}

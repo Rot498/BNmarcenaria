@@ -1,0 +1,318 @@
+/* ===== RESET BÁSICO ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding-top: 70px;
+  background-color: #fff;
+  color: #333;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: #000;
+  padding: 20px 0;
+}
+
+.navbar-brand {
+  color: #d4af37 !important;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-weight: 300;
+}
+
+.nav-link:hover {
+  color: #d4af37 !important;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 90vh;
+  background: url('../img/capa.jpg') center center / cover no-repeat;
+  display: flex;
+}
+
+.overlay {
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.hero p {
+  color: #ddd;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* ===== TÍTULOS ===== */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* ===== PROVA SOCIAL ===== */
+section.container h3 {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+section.container p {
+  font-size: 14px;
+}
+
+/* ===== SERVIÇOS COM IMAGENS ===== */
+.services-image-section {
+  background: #f8f8f8;
+}
+
+.service-image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.service-image-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.service-image-card:hover img {
+  transform: scale(1.05);
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.15)
+  );
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.service-overlay h5 {
+  color: #d4af37;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.service-overlay p {
+  font-size: 14px;
+}
+
+/* ===== CTA FINAL ===== */
+.bg-dark h2 {
+  font-weight: 600;
+}
+
+/* BOTÃO FIXO WHATSAPP */
+.btn-whatsapp-fixo {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    text-decoration: none;
+    z-index: 100;
+}
+
+
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #111;
+  color: #ccc;
+  padding-top: 40px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.footer-section h4 {
+  color: #d4af37;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== REDES SOCIAIS ===== */
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.social-links li {
+  margin: 0;
+}
+
+.social-links a {
+  color: #ccc;
+  font-size: 40px;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #d4af37;
+}
+
+/* ===== FOOTER BOTTOM ===== */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin-top: 30px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center; /* CENTRALIZA */
+  align-items: center;
+  font-size: 13px;
+  color: #aaa;
+  text-align: center;
+}
+
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* ===== CATEGORIAS DE PROJETOS ===== */
+.category-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.category-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.category-card span {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== PROJETOS ===== */
+.project-card {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.project-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.campo-projeto {
+  height: 164px;     /* altura fixa (ajuste se quiser) */
+}
+
+/* ===== LOGO NAVBAR ===== */
+.logo-navbar {
+  width: 32px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.galeria-projeto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.img-galeria {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform .3s;
+}
+
+.img-galeria:hover {
+  transform: scale(1.03);
+}
+
+/* ===== AJUSTE MODAL BOOTSTRAP ===== */
+.modal {
+  z-index: 1055;
+}
+
+.modal-backdrop {
+  z-index: 1050;
+}
+
+.carousel img {
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+
+
+

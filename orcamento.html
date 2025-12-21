@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Orçamento - BNmarcenaria</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">BNmarcenaria</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="projetos.html">Projetos</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container py-3 mt-3">
+
+<section class="container py-5">
+<h2 class="section-title text-center">Solicite seu orçamento</h2>
+
+<form id="formOrcamento" class="col-md-6 mx-auto">
+  <input id="nome" class="form-control mb-3" placeholder="Nome" required>
+  <input id="email" class="form-control mb-3" placeholder="Email" required>
+  <textarea id="mensagem" class="form-control mb-3 campo-projeto" placeholder="Descreva seu projeto" required></textarea>
+  <button class="btn btn-dark w-100" type="submit">Enviar</button>
+</form>
+
+</section>
+
+<!-- Botão flutuante WhatsApp -->
+<a href="https://api.whatsapp.com/send?phone=5511933258278" target="_blank" class="btn-whatsapp-fixo">
+  <img src="img/whatsapp.png" alt="WhatsApp" width="28">
+</a>
+
+</main>
+<footer class="footer">
+  <div class="footer-bottom">
+    <span>© 2025 BNmarcenaria. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/email.js"></script>
+<script src="js/orcamento.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

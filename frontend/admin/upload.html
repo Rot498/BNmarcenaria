@@ -1,0 +1,24 @@
+<form id="uploadForm" enctype="multipart/form-data">
+  <input type="file" name="imagem" class="form-control mb-2" required>
+  <button class="btn btn-primary">Enviar</button>
+</form>
+
+<script>
+document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const token = localStorage.getItem('token');
+  const formData = new FormData(e.target);
+
+  const res = await fetch('http://127.0.0.1:3000/api/upload', {
+    method: 'POST',
+    headers: {
+      Authorization: 'Bearer ' + token
+    },
+    body: formData
+  });
+
+  const data = await res.json();
+  alert('Imagem enviada: ' + data.arquivo);
+});
+</script>
