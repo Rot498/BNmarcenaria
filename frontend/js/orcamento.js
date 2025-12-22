@@ -11,7 +11,8 @@ document.getElementById('formOrcamento').addEventListener('submit', async functi
   }
 
   try {
-    const response = await fetch('https://SEU-BACKEND.onrender.com/api/orcamentos', {
+    const response = await fetch('https://bnmarcenaria.onrender.com/api/orcamentos', {
+
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

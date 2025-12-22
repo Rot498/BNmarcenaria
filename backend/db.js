@@ -14,16 +14,16 @@ db.serialize(() => {
   `);
 
   db.run(`
-    CREATE TABLE IF NOT EXISTS admin (
+    CREATE TABLE IF NOT EXISTS admins (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       email TEXT UNIQUE,
       senha TEXT
     )
   `);
 
-  // 👇 ADMIN FIXO (seguro para portfólio)
+  // 👇 ADMIN FIXO (para portfólio/faculdade)
   db.run(`
-    INSERT OR IGNORE INTO admin (email, senha)
+    INSERT OR IGNORE INTO admins (email, senha)
     VALUES ('admin@admin.com', '123456')
   `);
 

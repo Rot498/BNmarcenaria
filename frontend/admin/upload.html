@@ -10,7 +10,7 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
   const token = localStorage.getItem('token');
   const formData = new FormData(e.target);
 
-  const res = await fetch('http://127.0.0.1:3000/api/upload', {
+  const res = await fetch('https://bnmarcenaria.onrender.com/api/upload', {
     method: 'POST',
     headers: {
       Authorization: 'Bearer ' + token

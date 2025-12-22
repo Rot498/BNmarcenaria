@@ -1,29 +1,39 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const db = require('../db');
 
 const router = express.Router();
 
-const ADMIN = {
-  email: 'admin@admin.com',
-  senha: '123456'
-};
-
-const JWT_SECRET = 'segredo_super_seguro';
+const JWT_SECRET = 'segredo_super_seguro'; // depois pode ir para .env
 
 router.post('/login', (req, res) => {
   const { email, senha } = req.body;
 
-  if (email !== ADMIN.email || senha !== ADMIN.senha) {
-    return res.status(401).json({ erro: 'Credenciais inválidas' });
+  if (!email || !senha) {
+    return res.status(400).json({ erro: 'Email e senha obrigatórios' });
   }
 
-  const token = jwt.sign(
-    { email },
-    JWT_SECRET,
-    { expiresIn: '2h' }
-  );
+  db.get(
+    'SELECT * FROM admins WHERE email = ? AND senha = ?',
+    [email, senha],
+    (err, admin) => {
+      if (err) {
+        return res.status(500).json({ erro: 'Erro no servidor' });
+      }
 
-  res.json({ token });
+      if (!admin) {
+        return res.status(401).json({ erro: 'Credenciais inválidas' });
+      }
+
+      const token = jwt.sign(
+        { id: admin.id, email: admin.email },
+        JWT_SECRET,
+        { expiresIn: '2h' }
+      );
+
+      res.json({ token });
+    }
+  );
 });
 
 module.exports = router;

@@ -4,7 +4,7 @@ if (!token) {
   window.location.href = 'login.html';
 }
 
-fetch('http://127.0.0.1:3000/api/orcamentos', {
+fetch('https://bnmarcenaria.onrender.com/api/orcamentos', {
   headers: {
     Authorization: 'Bearer ' + token
   }
@@ -40,4 +40,3 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
   localStorage.removeItem('token');
   window.location.href = 'login.html';
 });
-
