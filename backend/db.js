@@ -1,8 +1,8 @@
-// backend/db.js
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./db.sqlite');
 
 db.serialize(() => {
+
   db.run(`
     CREATE TABLE IF NOT EXISTS orcamentos (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -16,10 +16,17 @@ db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS admin (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      email TEXT,
+      email TEXT UNIQUE,
       senha TEXT
     )
   `);
+
+  // 👇 ADMIN FIXO (seguro para portfólio)
+  db.run(`
+    INSERT OR IGNORE INTO admin (email, senha)
+    VALUES ('admin@admin.com', '123456')
+  `);
+
 });
 
 module.exports = db;
