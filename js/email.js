@@ -5,7 +5,7 @@
 document.getElementById("formOrcamento").addEventListener("submit", function(e){
   e.preventDefault();
 
-  emailjs.send("service_r9dq5iz", "template_5f5ya5v", {
+  emailjs.send("service_rac6pwb", "template_um6qlpu", {
     nome: document.getElementById("nome").value,
     email: document.getElementById("email").value,
     mensagem: document.getElementById("mensagem").value
