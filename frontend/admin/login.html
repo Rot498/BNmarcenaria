@@ -12,16 +12,18 @@
 <body>
 
 <div class="admin-login">
-  <form id="formLogin">
-    <h4>Admin Login</h4>
+  <form id="formAdminLogin">
+    <h4>🔐 Admin Login</h4>
 
-    <input id="email" class="form-control mb-2" placeholder="Email" required>
-    <input id="senha" type="password" class="form-control mb-3" placeholder="Senha" required>
+    <input type="email" id="email" class="form-control mb-2" placeholder="Email" required>
+    <input type="password" id="senha" class="form-control mb-3" placeholder="Senha" required>
 
-    <button class="btn btn-warning w-100">Entrar</button>
+    <button type="submit" class="btn btn-warning w-100">Entrar</button>
   </form>
 </div>
 
+<script src="../../js/config.js"></script>
 <script src="admin.js"></script>
 </body>
 </html>
+

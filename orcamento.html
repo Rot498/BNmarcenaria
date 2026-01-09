@@ -20,6 +20,7 @@
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="projetos.html">Projetos</a></li>
+        <li class="nav-item"><a class="nav-link" href="orcamento.html">Orçamento</a></li>
       </ul>
     </div>
   </div>
@@ -27,19 +28,20 @@
 <main class="container py-3 mt-3">
 
 <section class="container py-5">
-<h2 class="section-title text-center">Solicite seu orçamento</h2>
+<h2 class="section-title text-center">📋 Solicite seu orçamento</h2>
 
 <form id="formOrcamento" class="col-md-6 mx-auto">
-  <input id="nome" class="form-control mb-3" placeholder="Nome" required>
-  <input id="email" class="form-control mb-3" placeholder="Email" required>
-  <textarea id="mensagem" class="form-control mb-3 campo-projeto" placeholder="Descreva seu projeto" required></textarea>
-  <button class="btn btn-dark w-100" type="submit">Enviar</button>
+  <input id="nome" type="text" class="form-control mb-3" placeholder="Seu nome" maxlength="255" required>
+  <input id="email" type="email" class="form-control mb-3" placeholder="Seu email" maxlength="255" required>
+  <textarea id="mensagem" class="form-control mb-3 campo-projeto" placeholder="Descreva seu projeto" maxlength="2000" rows="6" required></textarea>
+  <div class="form-text mb-3">Máximo 2000 caracteres</div>
+  <button type="submit" class="btn btn-dark w-100">Enviar Orçamento</button>
 </form>
 
 </section>
 
 <!-- Botão flutuante WhatsApp -->
-<a href="https://api.whatsapp.com/send?phone=5511933258278" target="_blank" class="btn-whatsapp-fixo">
+<a href="https://api.whatsapp.com/send?phone=5511933258278" target="_blank" class="btn-whatsapp-fixo" title="Envie mensagem via WhatsApp">
   <img src="img/whatsapp.png" alt="WhatsApp" width="28">
 </a>
 
@@ -51,8 +53,9 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/config.js"></script>
 <script src="js/email.js"></script>
-<script src="js/orcamento.js"></script>
+<script src="frontend/js/orcamento.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

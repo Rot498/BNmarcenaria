@@ -1,37 +1,50 @@
-document.getElementById("formAdminLogin").addEventListener("submit", async function (e) {
+/**
+ * Admin Login Script
+ * Autentica o admin e armazena token JWT
+ */
+
+document.getElementById("formAdminLogin")?.addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const email = e.target.querySelector("input[type=email]").value.trim();
-  const senha = e.target.querySelector("input[type=password]").value.trim();
+  const email = this.querySelector("input[type=email]")?.value.trim();
+  const senha = this.querySelector("input[type=password]")?.value.trim();
 
   if (!email || !senha) {
-    alert("Preencha todos os campos");
+    alert("Por favor, preencha todos os campos");
     return;
   }
 
+  // Desabilitar formulário durante requisição
+  const button = this.querySelector('button[type="submit"]');
+  const originalText = button.textContent;
+  button.disabled = true;
+  button.textContent = "Autenticando...";
+
   try {
-    const response = await fetch('https://bnmarcenaria.onrender.com/api/auth/login', {
+    const result = await apiFetch('/api/auth/login', {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
       body: JSON.stringify({ email, senha })
     });
 
-    const data = await response.json();
-
-    if (!response.ok) {
-      alert(data.erro || "Usuário ou senha inválidos");
+    if (!result.ok) {
+      const errorMsg = result.error?.erro || "Falha na autenticação";
+      alert(`❌ ${errorMsg}`);
       return;
     }
 
-    // ✅ salva o token
-    localStorage.setItem("token", data.token);
+    // Salvar token
+    localStorage.setItem(CONFIG.TOKEN_KEY, result.data.token);
 
-    // ✅ redireciona
+    // Redirecionar para dashboard
+    alert("✅ Login realizado com sucesso!");
     window.location.href = "dashboard.html";
 
   } catch (error) {
-    alert("Erro ao conectar com o servidor");
+    console.error('Erro ao fazer login:', error);
+    alert("❌ Erro ao conectar com o servidor. Verifique sua conexão.");
+  } finally {
+    button.disabled = false;
+    button.textContent = originalText;
   }
 });
+
